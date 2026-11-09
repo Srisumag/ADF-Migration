@@ -1,0 +1,171 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdevpractical"
+		},
+		"DS_SQL_STOREDPROCEDURE_password": {
+			"value": ""
+		},
+		"LS_CSVLOOKUP_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_BULK_accountKey": {
+			"value": ""
+		},
+		"LS_DELETE_accountKey": {
+			"value": ""
+		},
+		"LS_EVENT_accountKey": {
+			"value": ""
+		},
+		"LS_EVENTOUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_FOREACH_accountKey": {
+			"value": ""
+		},
+		"LS_FOREACHSINK_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_accountKey": {
+			"value": ""
+		},
+		"LS_MULTIPLE_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_MULTI_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_PARQUETBULK_accountKey": {
+			"value": ""
+		},
+		"LS_RESTPARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SIZECHECK_accountKey": {
+			"value": ""
+		},
+		"LS_SOURCE_CSV_accountKey": {
+			"value": ""
+		},
+		"LS_SQLLOOKUP_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SQL_ADLS_accountKey": {
+			"value": ""
+		},
+		"LS_SRC_SQLSERVER_password": {
+			"value": ""
+		},
+		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"LS_CSVLOOKUP_properties_typeProperties_url": {
+			"value": "https://adlsdevexcelsource100.dfs.core.windows.net/"
+		},
+		"LS_CSV_BULK_properties_typeProperties_url": {
+			"value": "https://adlsdevtrigger.dfs.core.windows.net/"
+		},
+		"LS_DELETE_properties_typeProperties_url": {
+			"value": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_EVENT_properties_typeProperties_url": {
+			"value": "https://adlsdevtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENTOUTPUT_properties_typeProperties_url": {
+			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_FOREACH_properties_typeProperties_url": {
+			"value": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_FOREACHSINK_properties_typeProperties_url": {
+			"value": "https://adlsdevsink100.dfs.core.windows.net/"
+		},
+		"LS_JSON_properties_typeProperties_url": {
+			"value": "https://adlsdevsink100.dfs.core.windows.net/"
+		},
+		"LS_MULTIPLE_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsink100.dfs.core.windows.net/"
+		},
+		"LS_MULTI_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevexcelsource100.dfs.core.windows.net/"
+		},
+		"LS_PARQUETBULK_properties_typeProperties_url": {
+			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_RESTPARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsink100.dfs.core.windows.net/"
+		},
+		"LS_REST_API_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/5yDVOt/data"
+		},
+		"LS_SINK_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsdevsink100.dfs.core.windows.net/"
+		},
+		"LS_SIZECHECK_properties_typeProperties_url": {
+			"value": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_SOURCE_CSV_properties_typeProperties_url": {
+			"value": "https://adlsdevexcelsource100.dfs.core.windows.net/"
+		},
+		"LS_SQLLOOKUP_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SQLLOOKUP_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SQLLOOKUP_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"LS_SQL_ADLS_properties_typeProperties_url": {
+			"value": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_SRC_SQLSERVER_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_SRC_SQLSERVER_properties_typeProperties_database": {
+			"value": "AdventureWorks2025"
+		},
+		"LS_SRC_SQLSERVER_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"EVENTTRIGGER_properties_typeProperties_scope": {
+			"value": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
