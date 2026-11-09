@@ -1,0 +1,19 @@
+{
+	"name": "DS_SIZECHECK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SIZECHECK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "csvs",
+				"fileSystem": "foreach"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
