@@ -48,7 +48,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CSV_BULK",
+						"referenceName": "DS_CSV_BULK",
 						"type": "DatasetReference"
 					}
 				],

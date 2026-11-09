@@ -1,5 +1,5 @@
 {
-	"name": "CSV_BULK",
+	"name": "DS_CSV_BULK",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_CSV_BULK",
