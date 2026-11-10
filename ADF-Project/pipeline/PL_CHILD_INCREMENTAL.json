@@ -1,0 +1,26 @@
+{
+	"name": "PL_CHILD_INCREMENTAL",
+	"properties": {
+		"activities": [
+			{
+				"name": "LOOKUP_MAX_VALUE",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": []
+			}
+		],
+		"parameters": {
+			"TEST2": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
