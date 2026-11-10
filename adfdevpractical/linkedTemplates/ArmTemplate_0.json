@@ -71,6 +71,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SQL_ADLS'"
 		},
+		"LS_EVENT_TRIGGER_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER'"
+		},
+		"LS_EVENT_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_OUTPUT'"
+		},
 		"LS_CSVLOOKUP_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevexcelsource100.dfs.core.windows.net/"
@@ -138,6 +146,14 @@
 		"LS_SQL_ADLS_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevpractical.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -442,77 +458,38 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_CSVLOOKUP')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/LS_EVENT_TRIGGER')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_CSVLOOKUP",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "DelimitedText",
+				"type": "AzureBlobFS",
 				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": "industry_sic (1).csv",
-						"fileSystem": "inputexcel"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "SIC_Code",
-						"type": "String"
-					},
-					{
-						"name": "Description",
-						"type": "String"
+					"url": "[parameters('LS_EVENT_TRIGGER_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EVENT_TRIGGER_accountKey')]"
 					}
-				]
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_CSVLOOKUP')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DS_CSV_BULK')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/LS_EVENT_OUTPUT')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_CSV_BULK",
-					"type": "LinkedServiceReference"
-				},
 				"annotations": [],
-				"type": "DelimitedText",
+				"type": "AzureBlobFS",
 				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "inputcontainer"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "SIC_Code",
-						"type": "String"
-					},
-					{
-						"name": "Description",
-						"type": "String"
+					"url": "[parameters('LS_EVENT_OUTPUT_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EVENT_OUTPUT_accountKey')]"
 					}
-				]
+				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_CSV_BULK')]"
-			]
+			"dependsOn": []
 		}
 	]
 }

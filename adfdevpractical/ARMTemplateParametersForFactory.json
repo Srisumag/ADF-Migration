@@ -68,6 +68,12 @@
 		"LS_SRC_SQLSERVER_password": {
 			"value": ""
 		},
+		"LS_EVENT_TRIGGER_accountKey": {
+			"value": ""
+		},
+		"LS_EVENT_OUTPUT_accountKey": {
+			"value": ""
+		},
 		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
 			"value": ".\\SQLEXPRESS"
 		},
@@ -159,6 +165,15 @@
 			"value": "adf_user"
 		},
 		"EVENTTRIGGER_properties_typeProperties_scope": {
+			"value": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
+		},
+		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
+			"value": "https://adlsdevtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"EVENT_TRIGGER_properties_typeProperties_scope": {
 			"value": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
 		}
 	}
