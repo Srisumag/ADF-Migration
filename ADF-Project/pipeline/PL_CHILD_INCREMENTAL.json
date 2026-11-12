@@ -184,6 +184,17 @@
 				"type": "string"
 			}
 		},
+		"variables": {
+			"TableName": {
+				"type": "String"
+			},
+			"TableSchema": {
+				"type": "String"
+			},
+			"WatermarkColumn": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
