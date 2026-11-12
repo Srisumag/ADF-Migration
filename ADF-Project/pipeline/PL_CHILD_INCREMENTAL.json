@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "LOOKUP_MAX_VALUE",
+				"name": "Lookup1",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -14,8 +14,35 @@
 					"secureInput": false
 				},
 				"userProperties": []
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
+		"parameters": {
+			"TableSchema": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			},
+			"WatermarkColumn": {
+				"type": "string"
+			},
+			"LastLoadValue": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
