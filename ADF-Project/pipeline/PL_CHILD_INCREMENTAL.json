@@ -16,11 +16,6 @@
 				"userProperties": []
 			}
 		],
-		"parameters": {
-			"TEST2": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
