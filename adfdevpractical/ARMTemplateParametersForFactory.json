@@ -23,6 +23,12 @@
 		"LS_EVENTOUTPUT_accountKey": {
 			"value": ""
 		},
+		"LS_EVENT_OUTPUT_accountKey": {
+			"value": ""
+		},
+		"LS_EVENT_TRIGGER_accountKey": {
+			"value": ""
+		},
 		"LS_FOREACH_accountKey": {
 			"value": ""
 		},
@@ -68,10 +74,16 @@
 		"LS_SRC_SQLSERVER_password": {
 			"value": ""
 		},
-		"LS_EVENT_TRIGGER_accountKey": {
+		"LS_PARENT_WATERMARK_password": {
 			"value": ""
 		},
-		"LS_EVENT_OUTPUT_accountKey": {
+		"LS_LOOKUP_MAXVALUE_password": {
+			"value": ""
+		},
+		"LS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_ONPREM_SQL_SERVER_password": {
 			"value": ""
 		},
 		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
@@ -97,6 +109,12 @@
 		},
 		"LS_EVENTOUTPUT_properties_typeProperties_url": {
 			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
+			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
+			"value": "https://adlsdevtrigger.dfs.core.windows.net/"
 		},
 		"LS_FOREACH_properties_typeProperties_url": {
 			"value": "https://adlsdevpractical.dfs.core.windows.net/"
@@ -167,14 +185,38 @@
 		"EVENTTRIGGER_properties_typeProperties_scope": {
 			"value": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
 		},
-		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
-			"value": "https://adlsdevtrigger.dfs.core.windows.net/"
-		},
-		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
-			"value": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
-		},
 		"EVENT_TRIGGER_properties_typeProperties_scope": {
 			"value": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_database": {
+			"value": "Migration"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_database": {
+			"value": "Migration"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_userName": {
+			"value": "adf_user"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://migrationoutput.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_server": {
+			"value": ".\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_database": {
+			"value": "Migration"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_userName": {
+			"value": "adf_user"
 		}
 	}
 }

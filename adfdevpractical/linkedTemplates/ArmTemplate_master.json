@@ -31,6 +31,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EVENTOUTPUT'"
 		},
+		"LS_EVENT_OUTPUT_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_OUTPUT'"
+		},
+		"LS_EVENT_TRIGGER_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER'"
+		},
 		"LS_FOREACH_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_FOREACH'"
@@ -91,13 +99,21 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_SRC_SQLSERVER'"
 		},
-		"LS_EVENT_TRIGGER_accountKey": {
+		"LS_PARENT_WATERMARK_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER'"
+			"metadata": "Secure string for 'password' of 'LS_PARENT_WATERMARK'"
 		},
-		"LS_EVENT_OUTPUT_accountKey": {
+		"LS_LOOKUP_MAXVALUE_password": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_OUTPUT'"
+			"metadata": "Secure string for 'password' of 'LS_LOOKUP_MAXVALUE'"
+		},
+		"LS_SQL_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_PARQUET'"
+		},
+		"LS_ONPREM_SQL_SERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPREM_SQL_SERVER'"
 		},
 		"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
 			"type": "string",
@@ -130,6 +146,14 @@
 		"LS_EVENTOUTPUT_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevtrigger.dfs.core.windows.net/"
 		},
 		"LS_FOREACH_properties_typeProperties_url": {
 			"type": "string",
@@ -223,17 +247,49 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
 		},
-		"LS_EVENT_TRIGGER_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevtrigger.dfs.core.windows.net/"
-		},
-		"LS_EVENT_OUTPUT_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsdevoutputtrigger.dfs.core.windows.net/"
-		},
 		"EVENT_TRIGGER_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/40fab1f2-93f5-4c7f-9142-f011fc4ea22a/resourceGroups/rg_dev_practical/providers/Microsoft.Storage/storageAccounts/adlsdevtrigger"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": ".\\SQLEXPRESS"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Migration"
+		},
+		"LS_PARENT_WATERMARK_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": ".\\SQLEXPRESS"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Migration"
+		},
+		"LS_LOOKUP_MAXVALUE_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://migrationoutput.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": ".\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Migration"
+		},
+		"LS_ONPREM_SQL_SERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
 		},
 		"containerUri": {
 			"type": "string",
@@ -277,6 +333,12 @@
 					"LS_EVENTOUTPUT_accountKey": {
 						"value": "[parameters('LS_EVENTOUTPUT_accountKey')]"
 					},
+					"LS_EVENT_OUTPUT_accountKey": {
+						"value": "[parameters('LS_EVENT_OUTPUT_accountKey')]"
+					},
+					"LS_EVENT_TRIGGER_accountKey": {
+						"value": "[parameters('LS_EVENT_TRIGGER_accountKey')]"
+					},
 					"LS_FOREACH_accountKey": {
 						"value": "[parameters('LS_FOREACH_accountKey')]"
 					},
@@ -310,12 +372,6 @@
 					"LS_SQL_ADLS_accountKey": {
 						"value": "[parameters('LS_SQL_ADLS_accountKey')]"
 					},
-					"LS_EVENT_TRIGGER_accountKey": {
-						"value": "[parameters('LS_EVENT_TRIGGER_accountKey')]"
-					},
-					"LS_EVENT_OUTPUT_accountKey": {
-						"value": "[parameters('LS_EVENT_OUTPUT_accountKey')]"
-					},
 					"LS_CSVLOOKUP_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSVLOOKUP_properties_typeProperties_url')]"
 					},
@@ -330,6 +386,12 @@
 					},
 					"LS_EVENTOUTPUT_properties_typeProperties_url": {
 						"value": "[parameters('LS_EVENTOUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_EVENT_OUTPUT_properties_typeProperties_url": {
+						"value": "[parameters('LS_EVENT_OUTPUT_properties_typeProperties_url')]"
+					},
+					"LS_EVENT_TRIGGER_properties_typeProperties_url": {
+						"value": "[parameters('LS_EVENT_TRIGGER_properties_typeProperties_url')]"
 					},
 					"LS_FOREACH_properties_typeProperties_url": {
 						"value": "[parameters('LS_FOREACH_properties_typeProperties_url')]"
@@ -366,12 +428,6 @@
 					},
 					"LS_SQL_ADLS_properties_typeProperties_url": {
 						"value": "[parameters('LS_SQL_ADLS_properties_typeProperties_url')]"
-					},
-					"LS_EVENT_TRIGGER_properties_typeProperties_url": {
-						"value": "[parameters('LS_EVENT_TRIGGER_properties_typeProperties_url')]"
-					},
-					"LS_EVENT_OUTPUT_properties_typeProperties_url": {
-						"value": "[parameters('LS_EVENT_OUTPUT_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -391,35 +447,11 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"DS_SQL_STOREDPROCEDURE_password": {
-						"value": "[parameters('DS_SQL_STOREDPROCEDURE_password')]"
+					"LS_SQL_PARQUET_accountKey": {
+						"value": "[parameters('LS_SQL_PARQUET_accountKey')]"
 					},
-					"LS_SINK_ADLS_accountKey": {
-						"value": "[parameters('LS_SINK_ADLS_accountKey')]"
-					},
-					"LS_SQLLOOKUP_password": {
-						"value": "[parameters('LS_SQLLOOKUP_password')]"
-					},
-					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
-						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_server')]"
-					},
-					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_database": {
-						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_database')]"
-					},
-					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_userName": {
-						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_userName')]"
-					},
-					"LS_SINK_ADLS_properties_typeProperties_url": {
-						"value": "[parameters('LS_SINK_ADLS_properties_typeProperties_url')]"
-					},
-					"LS_SQLLOOKUP_properties_typeProperties_server": {
-						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_server')]"
-					},
-					"LS_SQLLOOKUP_properties_typeProperties_database": {
-						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_database')]"
-					},
-					"LS_SQLLOOKUP_properties_typeProperties_userName": {
-						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_userName')]"
+					"LS_SQL_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -441,11 +473,50 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"DS_SQL_STOREDPROCEDURE_password": {
+						"value": "[parameters('DS_SQL_STOREDPROCEDURE_password')]"
+					},
+					"LS_SINK_ADLS_accountKey": {
+						"value": "[parameters('LS_SINK_ADLS_accountKey')]"
+					},
+					"LS_SQLLOOKUP_password": {
+						"value": "[parameters('LS_SQLLOOKUP_password')]"
+					},
 					"LS_SQLSERVER_password": {
 						"value": "[parameters('LS_SQLSERVER_password')]"
 					},
 					"LS_SRC_SQLSERVER_password": {
 						"value": "[parameters('LS_SRC_SQLSERVER_password')]"
+					},
+					"LS_PARENT_WATERMARK_password": {
+						"value": "[parameters('LS_PARENT_WATERMARK_password')]"
+					},
+					"LS_LOOKUP_MAXVALUE_password": {
+						"value": "[parameters('LS_LOOKUP_MAXVALUE_password')]"
+					},
+					"LS_ONPREM_SQL_SERVER_password": {
+						"value": "[parameters('LS_ONPREM_SQL_SERVER_password')]"
+					},
+					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_server": {
+						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_server')]"
+					},
+					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_database": {
+						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_database')]"
+					},
+					"DS_SQL_STOREDPROCEDURE_properties_typeProperties_userName": {
+						"value": "[parameters('DS_SQL_STOREDPROCEDURE_properties_typeProperties_userName')]"
+					},
+					"LS_SINK_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_SINK_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_SQLLOOKUP_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_server')]"
+					},
+					"LS_SQLLOOKUP_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_database')]"
+					},
+					"LS_SQLLOOKUP_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLLOOKUP_properties_typeProperties_userName')]"
 					},
 					"LS_SQLSERVER_properties_typeProperties_server": {
 						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
@@ -465,6 +536,53 @@
 					"LS_SRC_SQLSERVER_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SRC_SQLSERVER_properties_typeProperties_userName')]"
 					},
+					"LS_PARENT_WATERMARK_properties_typeProperties_server": {
+						"value": "[parameters('LS_PARENT_WATERMARK_properties_typeProperties_server')]"
+					},
+					"LS_PARENT_WATERMARK_properties_typeProperties_database": {
+						"value": "[parameters('LS_PARENT_WATERMARK_properties_typeProperties_database')]"
+					},
+					"LS_PARENT_WATERMARK_properties_typeProperties_userName": {
+						"value": "[parameters('LS_PARENT_WATERMARK_properties_typeProperties_userName')]"
+					},
+					"LS_LOOKUP_MAXVALUE_properties_typeProperties_server": {
+						"value": "[parameters('LS_LOOKUP_MAXVALUE_properties_typeProperties_server')]"
+					},
+					"LS_LOOKUP_MAXVALUE_properties_typeProperties_database": {
+						"value": "[parameters('LS_LOOKUP_MAXVALUE_properties_typeProperties_database')]"
+					},
+					"LS_LOOKUP_MAXVALUE_properties_typeProperties_userName": {
+						"value": "[parameters('LS_LOOKUP_MAXVALUE_properties_typeProperties_userName')]"
+					},
+					"LS_ONPREM_SQL_SERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPREM_SQL_SERVER_properties_typeProperties_server')]"
+					},
+					"LS_ONPREM_SQL_SERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPREM_SQL_SERVER_properties_typeProperties_database')]"
+					},
+					"LS_ONPREM_SQL_SERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPREM_SQL_SERVER_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adfdevpractical_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "adfdevpractical_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
 					"EVENTTRIGGER_properties_typeProperties_scope": {
 						"value": "[parameters('EVENTTRIGGER_properties_typeProperties_scope')]"
 					},
@@ -474,7 +592,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'adfdevpractical_ArmTemplate_1')]"
+				"[resourceId('Microsoft.Resources/deployments', 'adfdevpractical_ArmTemplate_2')]"
 			]
 		}
 	]
