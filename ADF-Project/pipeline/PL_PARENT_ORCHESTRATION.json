@@ -26,13 +26,7 @@
 					},
 					"dataset": {
 						"referenceName": "DS_PARENT_WATERMARK",
-						"type": "DatasetReference",
-						"parameters": {
-							"TEST1": {
-								"value": "@pipeline().parameters.TEST",
-								"type": "Expression"
-							}
-						}
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}

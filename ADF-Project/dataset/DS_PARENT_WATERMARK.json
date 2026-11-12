@@ -5,11 +5,6 @@
 			"referenceName": "LS_PARENT_WATERMARK",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"TEST1": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "SqlServerTable",
 		"schema": [
